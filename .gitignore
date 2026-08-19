@@ -1,0 +1,148 @@
+# Miscellaneous
+*.class
+*.log
+*.pyc
+*.swp
+.DS_Store
+.atom/
+.buildlog/
+.history
+.svn/
+
+# IntelliJ related
+*.iml
+*.ipr
+*.iws
+.idea/
+
+# The .vscode folder contains launch configuration and tasks you configure in
+# VS Code which you may wish to be included in version control, so this line
+# is commented out by default.
+#.vscode/
+
+# Flutter/Dart/Pub related
+**/doc/api/
+**/ios/Flutter/.last_build_id
+.dart_tool/
+.flutter-plugins
+.flutter-plugins-dependencies
+.packages
+.pub-cache/
+.pub/
+/build/
+
+# Web related
+lib/generated_plugin_registrant.dart
+
+# Symbolication related
+app.*.symbols
+
+# Obfuscation related
+app.*.map.json
+
+# Exceptions to above rules.
+!/packages/flutter_tools/test/data/dart_dependencies_test/**/.packages
+
+# google-services
+android/app/google-services.json
+
+# ---------------------------------------------------------------------------
+# Ek kurallar (GitHub'a gonderilmemesi gereken dosyalar)
+# ---------------------------------------------------------------------------
+
+# Build ciktilari (her seviyede)
+build/
+**/build/
+.dart_tool/
+.flutter-plugins
+.flutter-plugins-dependencies
+.fvm/
+.melos_tool/
+
+# IDE / editor
+*.iml
+*.ipr
+*.iws
+.idea/
+.vscode/
+*.code-workspace
+.history/
+
+# Isletim sistemi dosyalari
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+desktop.ini
+
+# Gizli bilgiler / anahtarlar
+*.env
+.env
+.env.*
+!.env.example
+*.jks
+*.keystore
+key.properties
+android/key.properties
+android/local.properties
+local.properties
+**/google-services.json
+**/GoogleService-Info.plist
+firebase_options.dart
+lib/firebase_options.dart
+.firebase/
+service-account*.json
+*.p8
+*.p12
+*.mobileprovision
+*.cer
+
+# Android
+android/.gradle/
+android/captures/
+android/app/release/
+android/app/debug/
+android/app/profile/
+android/.cxx/
+*.apk
+*.aab
+
+# iOS / macOS
+ios/Pods/
+macos/Pods/
+ios/.symlinks/
+macos/.symlinks/
+ios/Flutter/Flutter.framework/
+ios/Flutter/Flutter.podspec
+ios/Flutter/App.framework/
+ios/Flutter/flutter_export_environment.sh
+ios/Flutter/Generated.xcconfig
+macos/Flutter/ephemeral/
+**/Flutter/ephemeral/
+**/xcuserdata/
+*.xcuserstate
+*.ipa
+*.dSYM.zip
+*.dSYM
+
+# Windows / Linux masaustu
+windows/flutter/ephemeral/
+linux/flutter/ephemeral/
+*.exe~
+
+# Test / coverage / log
+coverage/
+test/failures/
+**/failures/
+*.log
+*.tmp
+*.bak
+*.orig
+*.rej
+
+# Claude / AI arac dosyalari
+.claude/
+CLAUDE.local.md
