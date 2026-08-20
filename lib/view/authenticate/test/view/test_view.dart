@@ -2,6 +2,8 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_architecture_app/core/base/state/base_state.dart';
 import 'package:flutter_architecture_app/core/base/view/base_view.dart';
+import 'package:flutter_architecture_app/core/constants/enums/preferences_enums.dart';
+import 'package:flutter_architecture_app/core/init/cache/preferences_manager.dart';
 import 'package:flutter_architecture_app/core/init/extension/string_extension.dart';
 import 'package:flutter_architecture_app/core/init/language/language_manager.dart';
 import 'package:flutter_architecture_app/core/init/language/locale_keys.g.dart';
@@ -30,7 +32,15 @@ class _TestViewState extends BaseState<TestView> {
   }
 
   Widget get scaffoldBody => Scaffold(
-    appBar: AppBar(title: textLocale(), actions: [changeLocaleButton()]),
+    appBar: AppBar(
+      leading: Text(
+        PreferencesManager.instance.getStringValue(
+          prefKey: PreferencesEnums.JWT_TOKEN,
+        ),
+      ),
+      title: textLocale(),
+      actions: [changeLocaleButton()],
+    ),
     body: textNumber,
     floatingActionButton: FloatingActionButton(
       onPressed: () => viewModel.increment(),

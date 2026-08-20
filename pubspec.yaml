@@ -37,6 +37,7 @@ dependencies:
   mobx: ^2.6.0
   mobx_codegen: ^2.7.5
   provider: ^6.1.5+1
+  shared_preferences: ^2.5.5
 
 dev_dependencies:
   flutter_lints: ^5.0.0

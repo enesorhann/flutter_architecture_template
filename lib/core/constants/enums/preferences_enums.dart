@@ -1,0 +1,6 @@
+enum PreferencesEnums {
+  JWT_TOKEN,
+  THEME_MODE,
+  LANGUAGE_CODE,
+  LANGUAGE_COUNTRY_CODE,
+}

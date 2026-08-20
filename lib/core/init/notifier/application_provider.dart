@@ -5,11 +5,12 @@ import 'package:provider/provider.dart';
 import 'package:provider/single_child_widget.dart';
 
 // LAZY SINGLETON
-class ProviderList extends AppTheme {
-  static ProviderList? _instance;
-  static ProviderList get instance => _instance ??= ProviderList._init();
+class ApplicationProvider extends AppTheme {
+  static ApplicationProvider? _instance;
+  static ApplicationProvider get instance =>
+      _instance ??= ApplicationProvider._init();
 
-  ProviderList._init();
+  ApplicationProvider._init();
 
   List<SingleChildWidget> dependItems = [
     ChangeNotifierProvider<ThemeNotifier>(create: (_) => ThemeNotifier()),
