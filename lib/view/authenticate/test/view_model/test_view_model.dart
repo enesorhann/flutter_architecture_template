@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_architecture_app/core/base/view_model/base_view_model.dart';
 import 'package:flutter_architecture_app/core/constants/enums/theme_enums.dart';
+import 'package:flutter_architecture_app/core/init/network/network_manager.dart';
 import 'package:flutter_architecture_app/core/init/notifier/theme_notifier.dart';
+import 'package:flutter_architecture_app/view/authenticate/test/model/test_model.dart';
 import 'package:mobx/mobx.dart';
 import 'package:provider/provider.dart';
 
@@ -8,12 +11,15 @@ part 'test_view_model.g.dart';
 
 class TestViewModel = _TestViewModelBase with _$TestViewModel;
 
-abstract class _TestViewModelBase with Store {
-  late BuildContext viewContext;
-
+abstract class _TestViewModelBase with Store, BaseViewModel {
   void setContext(BuildContext context) {
-    viewContext = context;
+    this.context = context;
   }
+
+  void init() {}
+
+  @observable
+  bool isLoading = false;
 
   @observable
   int number = 0;
@@ -28,8 +34,15 @@ abstract class _TestViewModelBase with Store {
 
   void changeTheme() {
     Provider.of<ThemeNotifier>(
-      viewContext,
+      context,
       listen: false,
     ).updateTheme(ThemeEnums.DARK);
+  }
+
+  @action
+  void getDioSample() async {
+    isLoading = true;
+    await NetworkManager.instance.getDio("test", TestModel());
+    isLoading = false;
   }
 }

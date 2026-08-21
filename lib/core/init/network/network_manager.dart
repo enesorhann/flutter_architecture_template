@@ -1,4 +1,4 @@
-//LAZY SINGLETON
+//EAGER SINGLETON
 import 'dart:io';
 
 import 'package:dio/dio.dart';
@@ -38,7 +38,7 @@ class NetworkManager {
   }
   Dio _dio = Dio();
 
-  Future getDio<T extends BaseModel>(String path, T model) async {
+  Future<dynamic> getDio<T extends BaseModel>(String path, T model) async {
     try {
       final response = await _dio.get(path);
 

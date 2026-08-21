@@ -17,6 +17,24 @@ mixin _$TestViewModel on _TestViewModelBase, Store {
     name: '_TestViewModelBase.isEven',
   )).value;
 
+  late final _$isLoadingAtom = Atom(
+    name: '_TestViewModelBase.isLoading',
+    context: context,
+  );
+
+  @override
+  bool get isLoading {
+    _$isLoadingAtom.reportRead();
+    return super.isLoading;
+  }
+
+  @override
+  set isLoading(bool value) {
+    _$isLoadingAtom.reportWrite(value, super.isLoading, () {
+      super.isLoading = value;
+    });
+  }
+
   late final _$numberAtom = Atom(
     name: '_TestViewModelBase.number',
     context: context,
@@ -33,6 +51,16 @@ mixin _$TestViewModel on _TestViewModelBase, Store {
     _$numberAtom.reportWrite(value, super.number, () {
       super.number = value;
     });
+  }
+
+  late final _$getDioSampleAsyncAction = AsyncAction(
+    '_TestViewModelBase.getDioSample',
+    context: context,
+  );
+
+  @override
+  Future getDioSample() {
+    return _$getDioSampleAsyncAction.run(() => super.getDioSample());
   }
 
   late final _$_TestViewModelBaseActionController = ActionController(
@@ -55,6 +83,7 @@ mixin _$TestViewModel on _TestViewModelBase, Store {
   @override
   String toString() {
     return '''
+isLoading: ${isLoading},
 number: ${number},
 isEven: ${isEven}
     ''';
